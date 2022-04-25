@@ -12,7 +12,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         'cucard':'Карточка контакта',
         'comcard':'Карточка компании',
         'catalogs':'Список задач',
-        'tlist':'todo лист задач',
+        'tcalendar':'календарь Задач',
         'stats.calls':'Аналитика -> Звонки',
         'stats.consolidate':'Аналитика -> Свободный отчет',
         'settings':'Настройки -> Интеграции',
@@ -26,17 +26,17 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       },
       init: _.bind(function () {
         let namePartAmo = AMOCRM.widgets.system.area;
-        if(namePartAmo == 'outer_space') namePartAmo = AMOCRM.getV3WidgetsArea();
+        if(namePartAmo == 'outer_space' || namePartAmo == 'clist') namePartAmo = AMOCRM.getV3WidgetsArea();
 
-        if (AMOCRM.data.is_card){
+        if (AMOCRM.data.is_card) {
             let typeCard = AMOCRM.getBaseEntity();
             let idCard = AMOCRM.data.current_card.id;
             let nameCard = " ";
 
-            switch (typeCard){
-                case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['company[NAME]']; break;
+            switch (typeCard) {
+                case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
                 case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
-                case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;
+                case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
             }
             console.log(namePartAmo + ", " + namePart[namePartAmo] + ", " + idCard + ", " + nameCard);
         } 
