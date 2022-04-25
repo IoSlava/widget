@@ -3,7 +3,7 @@
     "name": "widget.name",
     "description": "widget.description",
     "short_description": "widget.short_description",
-    "version": "2.6.7",
+    "version": "2.6.8",
     "interface_version": 2,
     "init_once": false,
     "locale": [
@@ -19,6 +19,7 @@
   "locations": [
     "dashboard",
     "leads",
+    "clist",
     "leads-pipeline",
     "leads_card",
     "contacts",

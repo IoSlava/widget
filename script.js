@@ -38,10 +38,10 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
                 case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
                 case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;
             }
-            //console.log(namePartAmo + ", " + namePart[namePartAmo] + ", " + idCard + ", " + nameCard);
+            console.log(namePartAmo + ", " + namePart[namePartAmo] + ", " + idCard + ", " + nameCard);
         } 
         else {
-            //console.log(namePart[namePartAmo] + ", " + namePartAmo);
+            console.log(namePart[namePartAmo] + ", " + namePartAmo);
         }
         return true;
       }, this),
