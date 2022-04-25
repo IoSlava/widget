@@ -1,0 +1,72 @@
+{
+  "widget": {
+    "name": "widget.name",
+    "description": "widget.description",
+    "short_description": "widget.short_description",
+    "version": "2.6.6",
+    "interface_version": 2,
+    "init_once": false,
+    "locale": [
+      "ru",
+      "en"
+    ],
+    "installation": true,
+    "support": {
+      "link": "https://www.amocrm.com",
+      "email": "support@amocrm.com"
+    }
+  },
+  "locations": [
+    "dashboard",
+    "leads",
+    "leads-pipeline",
+    "leads_card",
+    "contacts",
+    "companies",
+    "contacts_card",
+    "companies_card",
+    "todo",
+    "todo-calendar",
+    "statsCalls",
+    "stats",
+    "widgetsSettings",
+    "advanced_settings",
+    "everywhere"
+  ],
+  "tour": {
+    "is_tour": true,
+    "tour_images": {
+      "ru": [
+        "/images/logo_main.png",
+        "/images/logo_main.png",
+        "/images/logo_main.png"
+      ]
+    },
+    "tour_description": "widget.tour_description"
+  },
+  "settings": {
+       "login": {
+        "name": "settings.login",
+        "type": "text",
+        "required": true
+      },
+      "password": {
+        "name": "settings.password",
+        "type": "pass",
+        "required": true
+      },
+        "user": {
+        "name": "settings.user",
+        "type": "users",
+        "required": true
+      },
+        "users_lp": {
+        "name": "settings.users_lp",
+        "type": "users_lp",
+        "required": true
+      }  
+  },
+  "advanced": {
+    "title": "advanced.title"
+  }
+}
