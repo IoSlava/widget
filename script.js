@@ -26,14 +26,14 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
       },
       init: _.bind(function () {
         let namePartAmo = AMOCRM.widgets.system.area;
-        if(namePartAmo == 'clist') namePartAmo = AMOCRM.getV3WidgetsArea();
+        if(namePartAmo == 'outer_space') namePartAmo = AMOCRM.getV3WidgetsArea();
 
         if (AMOCRM.data.is_card){
             let typeCard = AMOCRM.getBaseEntity();
             let idCard = AMOCRM.data.current_card.id;
             let nameCard = " ";
 
-            switch(typeCard){
+            switch (typeCard){
                 case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['company[NAME]']; break;
                 case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
                 case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;

@@ -3,7 +3,7 @@
     "name": "widget.name",
     "description": "widget.description",
     "short_description": "widget.short_description",
-    "version": "2.7.2",
+    "version": "2.7.4",
     "interface_version": 2,
     "init_once": false,
     "locale": [
@@ -17,26 +17,9 @@
     }
   },
   "locations": [
-    "lcard",
-    "llist",
-    "ccard",
-    "clist",
-    "comcard",
-    "dashboard",
-    "leads",
-    "leads-pipeline",
-    "leads_card",
-    "contacts",
-    "companies",
-    "contacts_card",
-    "companies_card",
-    "todo",
-    "todo-calendar",
-    "statsCalls",
-    "stats",
+    "everywhere",
     "widgetsSettings",
-    "advanced_settings",
-    "everywhere"
+    "advanced_settings"
   ],
   "tour": {
     "is_tour": true,
