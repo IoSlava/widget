@@ -43,6 +43,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         else {
             console.log(namePart[namePartAmo] + ", " + namePartAmo);
         }
+        console.log("|||||||");
         return true;
       }, this),
       bind_actions: function () {
