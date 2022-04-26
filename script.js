@@ -78,18 +78,10 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
                 let user = dataAmo['user'];
                 let users_lp = dataAmo['users_lp'];
 
-                console.log("Логин " + login);
-                console.log("Пароль " + password);
-                console.log("Номер телефона Пользователя:");
-                user = JSON.parse(user);
-                for (const [key, value] of Object.entries(user)){        
-                    console.log("Ид Пользователя : " + key + " - " + "Номер телефона: " + value);
-                }
-                console.log("Пользователь и пароль:");
-                users_lp = JSON.parse(users_lp);
-                for (const [key, value] of Object.entries(users_lp)){
-                    console.log("Ид Пользователя : " + key + " - " + "Логин : " + value["login"] + " Пароль : " + value["password"]);
-                }
+                console.log(login);
+                console.log(password);
+                console.log(user);
+                console.log(users_lp);
                 return true;
             }
         };
