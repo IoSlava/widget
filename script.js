@@ -50,16 +50,18 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
 
                 let namePartAmo = getNameEntity();
                 let namePartAmoRu = getNameEntityRU(namePartAmo);
+                let infomation = "";
 
                 if (AMOCRM.data.is_card) {
                     let typeCard = AMOCRM.getBaseEntity();
                     let idCard = AMOCRM.data.current_card.id;
                     let nameCard = getNameCard(typeCard);
 
-                    console.log(namePartAmo + ", " + namePartAmoRu + ", " + idCard + ", " + nameCard);
+                    infomation = namePartAmo + ", " + namePartAmoRu + ", " + idCard + ", " + nameCard;
                 } else {
-                    console.log(namePartAmoRu + ", " + namePartAmo);
+                    infomation = namePartAmoRu + ", " + namePartAmo;
                 }
+                console.log(infomation)
                 return true;
             }, this),
             bind_actions: function () {
@@ -89,8 +91,6 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
                     console.log("Ид Пользователя : " + key + " - " + "Логин : " + value["login"] + " Пароль : " + value["password"]);
                 }
                 return true;
-            },
-            destroy: function () {
             }
         };
         return this;
