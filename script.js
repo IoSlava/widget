@@ -20,34 +20,34 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
             'advanced_settings':'Настройки -> расширенные настройки виджета'
         };
 
+        function getNameEntity() {
+            let namePartAmo = AMOCRM.widgets.system.area;
+            if (namePartAmo == 'outer_space' || namePartAmo == 'clist') namePartAmo = AMOCRM.getV3WidgetsArea();
+            return namePartAmo;
+        }
+
+        function getNameEntityRU(namePartAmo) {
+            let path = window.location.pathname; 
+            if (path == '/contacts/list/') namePart[namePartAmo] = 'Общий список Контактов и Компаний';
+            return namePart[namePartAmo];
+        }
+
+        function getNameCard(typeCard) {
+            let nameCard = "";
+            switch (typeCard) {
+                case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
+                case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
+                case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;
+                case 'customers': nameCard = AMOCRM.data.current_card.model.defaults['name']; break;
+            }
+            return nameCard;
+        }
+
         this.callbacks = {
             render: function () {
                 return true;
             },
             init: _.bind(function () {
-                function getNameEntity() {
-                    let namePartAmo = AMOCRM.widgets.system.area;
-                    if (namePartAmo == 'outer_space' || namePartAmo == 'clist') namePartAmo = AMOCRM.getV3WidgetsArea();
-                    return namePartAmo;
-                }
-
-                function getNameEntityRU(namePartAmo) {
-                    let path = window.location.pathname; 
-                    if (path == '/contacts/list/') namePart[namePartAmo] = 'Общий список Контактов и Компаний';
-                    return namePart[namePartAmo];
-                }
-
-                function getNameCard(typeCard) {
-                    let nameCard = "";
-                    switch (typeCard) {
-                        case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
-                        case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
-                        case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;
-                        case 'customers': nameCard = AMOCRM.data.current_card.model.defaults['name']; break;
-                    }
-                    return nameCard;
-                }
-
                 let namePartAmo = getNameEntity();
                 let namePartAmoRu = getNameEntityRU(namePartAmo);
                 let infomation = "";
@@ -61,6 +61,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
                 } else {
                     infomation = namePartAmoRu + ", " + namePartAmo;
                 }
+
                 console.log(infomation)
                 return true;
             }, this),
