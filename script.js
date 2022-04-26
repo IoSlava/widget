@@ -9,7 +9,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         'contacts.list':'Список контактов',
         'companies.list':'Список компаний',
         'culist':'Список покупателей',
-        'cucard':'Карточка контакта',
+        'ccard':'Карточка контакта',
         'comcard':'Карточка компании',
         'catalogs':'Список задач',
         'tcalendar':'календарь Задач',
@@ -36,7 +36,7 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
             switch (typeCard) {
                 case 'companies': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
                 case 'leads': nameCard = AMOCRM.data.current_card.model.defaults['lead[NAME]']; break;
-                case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[NAME]']; break;
+                case 'contacts': nameCard = AMOCRM.data.current_card.model.defaults['contact[FN]']; break;
             }
             console.log(namePartAmo + ", " + namePart[namePartAmo] + ", " + idCard + ", " + nameCard);
         } 
