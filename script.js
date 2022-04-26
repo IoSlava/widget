@@ -28,6 +28,9 @@ define(['jquery', 'underscore', 'twigjs'], function ($, _, Twig) {
         let namePartAmo = AMOCRM.widgets.system.area;
         if(namePartAmo == 'outer_space' || namePartAmo == 'clist') namePartAmo = AMOCRM.getV3WidgetsArea();
 
+        let path = window.location.pathname;
+
+        if(path == '/contacts/list/') namePart[namePartAmo] = 'Общий список Контактов и Компаний';
         if (AMOCRM.data.is_card) {
             let typeCard = AMOCRM.getBaseEntity();
             let idCard = AMOCRM.data.current_card.id;
